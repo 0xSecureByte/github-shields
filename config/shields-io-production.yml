@@ -1,0 +1,25 @@
+public:
+  metrics:
+    prometheus:
+      enabled: true
+    influx:
+      enabled: true
+      url: https://metrics.shields.io/telegraf
+      instanceIdFrom: env-var
+      instanceIdEnvVarName: FLY_ALLOC_ID
+      envLabel: shields-production
+
+  ssl:
+    isSecure: false
+
+  cors:
+    allowedOrigin: ['http://shields.io', 'https://shields.io']
+
+  services:
+    gitlab:
+      authorizedOrigins: 'https://gitlab.com'
+
+  rasterUrl: 'https://raster.shields.io'
+  userAgentBase: 'Shields.io'
+  requireCloudflare: true
+  requestTimeoutSeconds: 20
